@@ -501,9 +501,10 @@ Public Class IGN
                     Catch ez As Exception
                     End Try
                 End If
-
-                cmd.CommandText = "Delete From IGN_DTLS Where REC_ENT_NO = " + eno + ""
-                cmd.ExecuteNonQuery()
+                If eno <> "" Then
+                    cmd.CommandText = "Delete From IGN_DTLS Where REC_ENT_NO = " + eno + ""
+                    cmd.ExecuteNonQuery()
+                End If
                 If eno <> "" Then
                     LoadItemData(txtign.Text, True, "")
                 End If

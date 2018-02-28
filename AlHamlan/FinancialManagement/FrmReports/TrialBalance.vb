@@ -74,7 +74,7 @@ Public Class TrialBalance
         da.SelectCommand = cmd
         da.Fill(ds, "DummyTB")
 
-        AccessVerify.LoadReports(cr, ds, MainMDI.lblFrmDtls.Text + "?RepDuration?" + dtpFDate.Text + " To " + dtpToDate.Text)
+        AccessVerify.LoadReports(cr, ds, "RepDuration?" + dtpFDate.Text + " To " + dtpToDate.Text + "?" + MainMDI.lblFrmDtls.Text)
         con.Close()
     End Sub
 

@@ -52,6 +52,7 @@ Public Class CustAcStatement
         con.Open()
         cmd = New SqlCommand
         cmd.Connection = con
+        cmd.CommandTimeout = 0
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click

@@ -114,7 +114,7 @@ Partial Class Login
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(113, 23)
         Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Version 6.19"
+        Me.Label4.Text = "Version 6.20"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'ComboBox1

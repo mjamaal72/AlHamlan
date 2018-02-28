@@ -74,7 +74,7 @@ Public Class ProfitLoss
         da.SelectCommand = cmd
         da.Fill(ds, "DummyPL")
 
-        AccessVerify.LoadReports(cr, ds, MainMDI.lblFrmDtls.Text + "?RepDuration?" + dtpFDate.Text + " To " + dtpToDate.Text)
+        AccessVerify.LoadReports(cr, ds, "RepDuration?" + dtpFDate.Text + " To " + dtpToDate.Text + "?" + MainMDI.lblFrmDtls.Text)
         con.Close()
     End Sub
 

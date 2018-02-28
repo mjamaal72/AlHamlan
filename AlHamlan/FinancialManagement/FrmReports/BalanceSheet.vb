@@ -73,7 +73,7 @@ Public Class BalanceSheet
         da.SelectCommand = cmd
         da.Fill(ds, "DummyBS")
 
-        AccessVerify.LoadReports(cr, ds, MainMDI.lblFrmDtls.Text + "?RepDuration?Balance Sheet As On " + dtpFDate.Text)
+        AccessVerify.LoadReports(cr, ds, "RepDuration?Balance Sheet As On " + dtpFDate.Text + "?" + MainMDI.lblFrmDtls.Text)
         con.Close()
     End Sub
 

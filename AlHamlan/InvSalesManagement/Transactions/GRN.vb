@@ -377,7 +377,7 @@ Public Class GRN
 
                 Try
                     For i As Integer = 0 To DataGridView1.Rows.Count - 1
-                        cmd.CommandText = "Insert Into GRN_DETAIL Values ((Select COALESCE((Select Top 1 ENT_NO + 1 From GRN_DETAIL Order By ENT_NO Desc),1)), " + GrnID + ", '" + DataGridView1.Rows(i).Cells("Item").Value.ToString + "', '" + DataGridView1.Rows(i).Cells("REMARKS").Value.ToString + "', " + DataGridView1.Rows(i).Cells("Pack").Value.ToString + ", " + DataGridView1.Rows(i).Cells("QTY").Value.ToString + ", " + DataGridView1.Rows(i).Cells("Price").Value.ToString + ", " + DataGridView1.Rows(i).Cells("Disc").Value.ToString + ")"
+                        cmd.CommandText = "Insert Into GRN_DETAIL Values ((Select COALESCE((Select Top 1 ENT_NO + 1 From GRN_DETAIL Order By ENT_NO Desc),1)), " + GrnID + ", '" + DataGridView1.Rows(i).Cells("Item").Value.ToString + "', '" + DataGridView1.Rows(i).Cells("REMARKS").Value.ToString + "', '" + DataGridView1.Rows(i).Cells("Pack").Value.ToString + "', " + DataGridView1.Rows(i).Cells("QTY").Value.ToString + ", " + DataGridView1.Rows(i).Cells("Price").Value.ToString + ", " + DataGridView1.Rows(i).Cells("Disc").Value.ToString + ")"
                         cmd.ExecuteNonQuery()
                     Next
                 Catch ez As Exception
@@ -391,9 +391,9 @@ Public Class GRN
                 Try
                     For i As Integer = 0 To DataGridView1.Rows.Count - 1
                         If DataGridView1.Rows(i).Cells("SrNo").Value.ToString = "" Then
-                            cmd.CommandText = "Insert Into GRN_DETAIL Values ((Select COALESCE((Select Top 1 ENT_NO + 1 From GRN_DETAIL Order By ENT_NO Desc),1)), " + txtgrnno.Text + ", '" + DataGridView1.Rows(i).Cells("Item").Value.ToString + "', '" + DataGridView1.Rows(i).Cells("REMARKS").Value.ToString + "', " + DataGridView1.Rows(i).Cells("Pack").Value.ToString + ", " + DataGridView1.Rows(i).Cells("QTY").Value.ToString + ", " + DataGridView1.Rows(i).Cells("Price").Value.ToString + ", " + DataGridView1.Rows(i).Cells("Disc").Value.ToString + ")"
+                            cmd.CommandText = "Insert Into GRN_DETAIL Values ((Select COALESCE((Select Top 1 ENT_NO + 1 From GRN_DETAIL Order By ENT_NO Desc),1)), " + txtgrnno.Text + ", '" + DataGridView1.Rows(i).Cells("Item").Value.ToString + "', '" + DataGridView1.Rows(i).Cells("REMARKS").Value.ToString + "', '" + DataGridView1.Rows(i).Cells("Pack").Value.ToString + "', " + DataGridView1.Rows(i).Cells("QTY").Value.ToString + ", " + DataGridView1.Rows(i).Cells("Price").Value.ToString + ", " + DataGridView1.Rows(i).Cells("Disc").Value.ToString + ")"
                         Else
-                            cmd.CommandText = "Update GRN_DETAIL Set GRN_NO=" + txtgrnno.Text + ", ITEMCODE='" + DataGridView1.Rows(i).Cells("Item").Value.ToString + "', PACK=" + DataGridView1.Rows(i).Cells("Pack").Value.ToString + ", QTY=" + DataGridView1.Rows(i).Cells("QTY").Value.ToString + ", ITM_PRICE=" + DataGridView1.Rows(i).Cells("Price").Value.ToString + ", ITM_DISC_PER=" + DataGridView1.Rows(i).Cells("Disc").Value.ToString + ", REMARKS='" + DataGridView1.Rows(i).Cells("REMARKS").Value.ToString + "' Where ENT_NO=" + DataGridView1.Rows(i).Cells("SrNo").Value.ToString + ""
+                            cmd.CommandText = "Update GRN_DETAIL Set GRN_NO=" + txtgrnno.Text + ", ITEMCODE='" + DataGridView1.Rows(i).Cells("Item").Value.ToString + "', PACK='" + DataGridView1.Rows(i).Cells("Pack").Value.ToString + "', QTY=" + DataGridView1.Rows(i).Cells("QTY").Value.ToString + ", ITM_PRICE=" + DataGridView1.Rows(i).Cells("Price").Value.ToString + ", ITM_DISC_PER=" + DataGridView1.Rows(i).Cells("Disc").Value.ToString + ", REMARKS='" + DataGridView1.Rows(i).Cells("REMARKS").Value.ToString + "' Where ENT_NO=" + DataGridView1.Rows(i).Cells("SrNo").Value.ToString + ""
                         End If
                         cmd.ExecuteNonQuery()
                     Next

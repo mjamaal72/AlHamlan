@@ -180,25 +180,29 @@ Public Class MainMDI
     End Sub
 
     Private Sub TextBox1_KeyUp(sender As Object, e As KeyEventArgs) Handles TextBox1.KeyUp
-        Dim KeyValue As String = TextBox1.Text
-        conn()
-        cmd.CommandText = "Select * from ShortKeysCode Where KeyName<>''"
-        dr = cmd.ExecuteReader
-        While dr.Read
-            KeyValue = Replace(KeyValue, CType(dr("KeyCode"), String), "+" + CType(dr("KeyName"), String))
-        End While
-        dr.Close()
-        cmd.CommandText = "Select FrmName From UserAccessMenu(" + lblUID.Text + ") Where SCKeyComb = '" + KeyValue.Substring(1) + "'"
-        dr = cmd.ExecuteReader
-        If dr.Read Then
-            AccessVerify.LoadingFrm(True)
-            FrmOpen(CType(dr("FrmName"), String))
-        Else
-            MsgBox("No Form Found.", MsgBoxStyle.Information, "H.F. General Trading CO.")
-        End If
-        dr.Close()
-        con.Close()
-        TextBox1.Text = ""
+        Try
+            Dim KeyValue As String = TextBox1.Text
+            conn()
+            cmd.CommandText = "Select * from ShortKeysCode Where KeyName<>''"
+            dr = cmd.ExecuteReader
+            While dr.Read
+                KeyValue = Replace(KeyValue, CType(dr("KeyCode"), String), "+" + CType(dr("KeyName"), String))
+            End While
+            dr.Close()
+            cmd.CommandText = "Select FrmName From UserAccessMenu(" + lblUID.Text + ") Where SCKeyComb = '" + KeyValue.Substring(1) + "'"
+            dr = cmd.ExecuteReader
+            If dr.Read Then
+                AccessVerify.LoadingFrm(True)
+                FrmOpen(CType(dr("FrmName"), String))
+            Else
+                MsgBox("No Form Found.", MsgBoxStyle.Information, "H.F. General Trading CO.")
+            End If
+            dr.Close()
+            con.Close()
+            TextBox1.Text = ""
+        Catch ex As Exception
+            con.Close()
+        End Try
     End Sub
 
     Private Sub lbltheme_TextChanged(sender As Object, e As EventArgs) Handles lbltheme.TextChanged

@@ -94,8 +94,7 @@ Public Class InvPrntng
 
         Dim cr As New DCInvoice
         cr.SetDataSource(ds)
-        'cr.PrintToPrinter(1, True, 1, 1)
-        AccessVerify.LoadReports(cr, ds)
+        AccessVerify.LoadReports(cr, ds, MainMDI.lblFrmDtls.Text)
 
         cmd.CommandText = "Update SALES_HEADER Set INV_DCPrntd = GetDate() Where  Inv_No >= " + txtfrom.Text + " and Inv_No <= " + txtto.Text
         cmd.ExecuteNonQuery()

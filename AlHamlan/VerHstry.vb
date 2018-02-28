@@ -24,6 +24,15 @@ Public Class VerHstry
 
         Dim sb = New System.Text.StringBuilder()
         sb.Append("{\rtf1\ansi")
+        sb.Append("\b \i Version 6.20 \i0 \b0 \line \line")
+        sb.Append("* Fix Error - Rechecked All Listings Formats - Masters & Transactions Listings. \line")
+        sb.Append("* Fix Error - Rechecked All Reports Formats For Proper Header and Duration Display - Reports. \line")
+        sb.Append("* Fix Error - Minor Code Modification - IGN. \line")
+        sb.Append("* Fix Error - Blank Print On X Formulae - Goods Return Note. \line")
+        sb.Append("* Modification - Pack Information In GRN Printout - Goods Return Note. \line")
+        sb.Append("* Modification - Customer Code In Cash Memo Report - Sales Invoice. \line")
+        sb.Append("* Modification - Customer Code In Delivery Challan Report - Sales Invoice. \line \line \line")
+
         sb.Append("\b \i Version 6.19 \i0 \b0 \line \line")
         sb.Append("* Fix Error - Hide Second Item On Deletion Of First - Sales Invoice. \line")
         sb.Append("* Modification - Auto Post On CashMemo Print - Sales Invoice. \line")
